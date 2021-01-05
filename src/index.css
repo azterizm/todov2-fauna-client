@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.input {
+  padding: 1rem 3rem;
+}
+
+label {
+  margin: 0 20px;
+}
+
+label[for='loginEmail'] {
+  margin-right: 48px;
+}
+
+a, button {
+  border-radius: 20px;
+  padding: .5rem 1rem;
+  border: none;
+}
+
+
