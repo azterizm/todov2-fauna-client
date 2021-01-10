@@ -1,9 +1,9 @@
 import { Link, Redirect } from "react-router-dom"
 
 export const Header = () => {
-  const handleLogout = ()=> {
+  const handleLogout = () => {
     localStorage.removeItem('token')
-    return <Redirect to='/login'/>
+    return <Redirect to='/login' />
   }
 
   return (
@@ -17,6 +17,8 @@ export const Header = () => {
       ) : (
           <Link to='/login'>Login</Link>
         )}
+      <Link to='/about'>About</Link>
+      <Link to='/contact'>Contact</Link>
     </div>
   )
 }

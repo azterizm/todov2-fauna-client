@@ -38,4 +38,27 @@ a, button {
   border: none;
 }
 
+.alertBtn {
+  font-size: 16px;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.alertCheck {
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.notifySyncContainer {
+  width: 40%;
+  height: 100%;
+  background: #e5ebf0;
+  padding: 2em;
+  border-radius: 50px;
+  margin: 4em auto;
+}
 

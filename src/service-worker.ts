@@ -37,8 +37,8 @@ registerRoute(
 
 registerRoute(
   'https://faunadb-server.herokuapp.com/',
-  new NetworkFirst({
-    cacheName: 'third-party-responses',
+  new StaleWhileRevalidate({
+    cacheName: 'todos-fetch',
     plugins: [
       new CacheableResponsePlugin({
         statuses: [200]
@@ -90,3 +90,18 @@ registerRoute(
     ],
   }),
 );
+
+
+const fetchAndCacheTodos = async () => {
+  const url = 'https://faunadb-server.herokuapp.com/'
+  const response = await fetch(url)
+  const cache = await caches.open('todos-fetch')
+  cache.put('/', response)
+}
+
+self.addEventListener('periodicSync', (e: any) => {
+  if (e.tag === 'todos') {
+    console.log('Fetching data in the background!')
+    e.waitUntil(fetchAndCacheTodos())
+  }
+})
